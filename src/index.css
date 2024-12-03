@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.righteous-regular {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gradient{
+  background: rgb(65,211,189);
+  background: linear-gradient(180deg, rgba(65,211,189,1) 0%, rgba(34,109,98,1) 100%);
+}
+.gradient_bg{
+  background: rgb(65,211,189);
+  background: linear-gradient(270deg, rgba(65,211,189,1) 0%, rgba(34,109,98,1) 100%);
+}
