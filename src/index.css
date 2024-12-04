@@ -14,11 +14,50 @@
   font-style: normal;
 }
 
-.gradient{
-  background: rgb(65,211,189);
-  background: linear-gradient(180deg, rgba(65,211,189,1) 0%, rgba(34,109,98,1) 100%);
+.gradient {
+  background: rgb(65, 211, 189);
+  background: linear-gradient(
+    180deg,
+    rgba(65, 211, 189, 1) 0%,
+    rgba(34, 109, 98, 1) 100%
+  );
 }
-.gradient_bg{
-  background: rgb(65,211,189);
-  background: linear-gradient(270deg, rgba(65,211,189,1) 0%, rgba(34,109,98,1) 100%);
+.gradient_270 {
+  background: rgb(65, 211, 189);
+  background: linear-gradient(
+    270deg,
+    rgba(65, 211, 189, 1) 0%,
+    rgba(34, 109, 98, 1) 100%
+  );
+}
+.gradient_0 {
+  background: rgb(65, 211, 189);
+  background: linear-gradient(
+    0deg,
+    rgba(65, 211, 189, 1) 0%,
+    rgba(34, 109, 98, 1) 100%
+  );
+}
+.gradient_testi {
+  background: #a8a8a8;
+  background: linear-gradient(
+    180deg,
+    rgba(168, 168, 168, 1) 0%,
+    rgba(115, 115, 115, 1) 100%
+  );
+}
+.gradient_work {
+  background: rgb(115, 115, 115);
+  background: linear-gradient(
+    180deg,
+    rgba(115, 115, 115, 1) 0%,
+    rgba(39, 99, 90, 1) 100%
+  );
+}
+.color {
+  background-color: #a8a8a8;
+}
+
+.rotateDumbbell {
+  transform: rotate(135deg);
 }
