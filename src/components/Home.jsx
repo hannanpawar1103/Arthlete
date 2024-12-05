@@ -9,6 +9,7 @@ import Featurecards from "../utils/Featurecards";
 import { BsFire } from "react-icons/bs";
 import { PiSneakerMoveFill } from "react-icons/pi";
 import Small_Featurescards from "../utils/Small_Featurescards";
+import Pricing from "../utils/Pricing";
 
 function Home() {
   return (
@@ -142,9 +143,46 @@ function Home() {
 
       {/* How does it work */}
 
-      <div className="h-screen gradient_work">
-        hello
+      <div className="gradient_work">
+        <div className="flex flex-col items-center justify-center text-white p-10 mx-40">
+          {/* Content Container */}
+          <div className="flex flex-col md:flex-row items-center justify-between w-full p-8">
+            <div>
+              {/* Section Header */}
+              <h2
+                className="text-5xl left-44 font-bold text-teal-400 mb-10 -mt-10"
+                style={{ fontFamily: "Righteous, sans-serif" }}
+              >
+                How does it work?
+              </h2>
+              {/* Text Section */}
+              <div className="md:w-2/3 mb-6 md:mb-0">
+                <p
+                  className="text-xl leading-relaxed"
+                  style={{ fontFamily: "Righteous, sans-serif" }}
+                >
+                  Simply open the app, start your workout, and let the motion
+                  tracking technology analyze your movements in real-time. Get
+                  instant feedback on your form, track your progress, and
+                  receive personalized insights to improve with every session!
+                </p>
+              </div>
+            </div>
+
+            {/* Video Placeholder */}
+            <div className="w-2/3 h-96 bg-neutral-400 rounded-lg flex items-center justify-center">
+              <span className="text-black text-xl font-bold">Video</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Pricing */}
+
+      <div>
+        <Pricing/>
+      </div>
+
     </>
   );
 }

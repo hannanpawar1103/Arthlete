@@ -54,6 +54,30 @@
     rgba(39, 99, 90, 1) 100%
   );
 }
+.gradient_revo {
+  color: rgb(79, 201, 183);
+  color: linear-gradient(
+    45deg,
+    rgba(79, 201, 183, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.gradient_plans {
+  background: rgb(39, 99, 90);
+  background: linear-gradient(
+    180deg,
+    rgba(39, 99, 90, 1) 0%,
+    rgba(115, 115, 115, 1) 100%
+  );
+}
+.gradient_hover {
+  background: rgb(39, 99, 90);
+  background: linear-gradient(
+    180deg,
+    rgba(39, 99, 90, 1) 0%,
+    rgba(115, 115, 115, 1) 100%
+  );
+}
 .color {
   background-color: #a8a8a8;
 }
