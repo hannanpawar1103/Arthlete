@@ -70,6 +70,17 @@ function Header() {
           >
             CONTACT
           </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${
+                isActive ? "gradient" : null
+              } px-2 py-1 rounded-xl mr-5 uppercase`
+            }
+            style={{ fontFamily: "Righteous, sans-serif" }}
+          >
+            Get App
+          </NavLink>
           
           </nav>
         {/* <button className="px-2 py-1 rounded-xl" onMouseEnter={() => setishovered(true)} onMouseLeave={() => setishovered(false)} style={{ fontFamily: 'Righteous, sans-serif' , background : ishovered ? 'linear-gradient(180deg, rgba(65,211,189,1) 0%, rgba(34,109,98,1) 100%)':'transparent' }}>
