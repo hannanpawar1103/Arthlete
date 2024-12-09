@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import women from "../img/woman-dumbbells.png";
 import man from "../img/man-running.png";
 import "../index.css";
@@ -8,10 +8,39 @@ import Pricing from "../utils/Pricing";
 import Working from "../utils/Working";
 import Testimonial from "../utils/Testimonial";
 import Hero from "../utils/Hero";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
+const useInView = (threshold = 0.2) => {
+  const ref = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [threshold]);
+
+  return [ref, isInView];
+};
 
 function Home() {
+  const [featuresRef, featuresInView] = useInView();
+  const [testimonialsRef, testimonialsInView] = useInView();
+  const [workingRef, workingInView] = useInView();
+  const [pricingRef, pricingInView] = useInView();
+
+  const fadeInAnimation = (isInView) =>
+    isInView
+      ? { opacity: 1, y: 0 }
+      : { opacity: 0, y: 50 }; // Default position is slightly off-screen.
+
   return (
     <>
       {/* Home */}
@@ -31,9 +60,10 @@ function Home() {
 
       {/* Features */}
       <motion.div
+        ref={featuresRef}
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        animate={fadeInAnimation(featuresInView)}
+        transition={{ duration: 1 }}
       >
         <div id="features" className="color w-full">
           <Featurecards />
@@ -42,23 +72,44 @@ function Home() {
       </motion.div>
 
       {/* Testimonial */}
-      <div
-        id="testimonials"
-        className="gradient_testi h-56 flex items-center justify-center"
-        style={{ fontFamily: "Righteous, sans-serif" }}
+      <motion.div
+        ref={testimonialsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={fadeInAnimation(testimonialsInView)}
+        transition={{ duration: 1 }}
       >
-        <Testimonial />
-      </div>
+        <div
+          id="testimonials"
+          className="gradient_testi h-56 flex items-center justify-center"
+          style={{ fontFamily: "Righteous, sans-serif" }}
+        >
+          <Testimonial />
+        </div>
+      </motion.div>
 
       {/* How does it work */}
-      <div id="working" className="gradient_work">
-        <Working />
-      </div>
+      <motion.div
+        ref={workingRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={fadeInAnimation(workingInView)}
+        transition={{ duration: 1 }}
+      >
+        <div id="working" className="gradient_work">
+          <Working />
+        </div>
+      </motion.div>
 
       {/* Pricing */}
-      <div id="pricing">
-        <Pricing />
-      </div>
+      <motion.div
+        ref={pricingRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={fadeInAnimation(pricingInView)}
+        transition={{ duration: 1 }}
+      >
+        <div id="pricing">
+          <Pricing />
+        </div>
+      </motion.div>
     </>
   );
 }
