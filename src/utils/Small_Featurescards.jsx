@@ -7,7 +7,7 @@ import { GiPodium } from "react-icons/gi";
 import { FaPizzaSlice } from "react-icons/fa";
 
 const Small_Featurescards = () => {
-  return (
+  return <div className="inline-block w-full">
     <div
       className="flex justify-between mx-10 my-5 flex-wrap gap-6"
       style={{ fontFamily: "Righteous, sans-serif" }}
@@ -92,7 +92,7 @@ const Small_Featurescards = () => {
         </div>
       </div>
     </div>
-  );
+  </div>;
 };
 
 export default Small_Featurescards;

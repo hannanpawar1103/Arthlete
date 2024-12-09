@@ -85,3 +85,23 @@
 .rotateDumbbell {
   transform: rotate(135deg);
 }
+header {
+  height: 80px; /* Adjust to your header height */
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #1a1a1a;
+}
+
+.sticky.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow when scrolled */
+}
+
+nav button {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  transition: background-color 0.3s ease;
+}
