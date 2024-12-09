@@ -66,11 +66,10 @@ function Header() {
             THLETE
           </span>
         </a>
-
-        {/* Animated Hamburger Button */}
+        
         <MotionConfig
           transition={{
-            duration: 0.5,
+            // duration: 1,
             ease: "easeInOut",
           }}
         >
@@ -107,7 +106,7 @@ function Header() {
       {/* Navigation Menu */}
       {isNavVisible && (
         <motion.nav
-          className="absolute top-full mr-3 right-0 w-fit bg-blue-400 text-center z-40 rounded-2xl py-5 px-5"
+          className="absolute top-full mr-3 right-0 w-fit bg-gradient-to-b from-teal-900 to-teal-600 text-center z-40 rounded-2xl py-5 px-5"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 ,}}
@@ -122,9 +121,11 @@ function Header() {
             <motion.button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className="block w-full py-2 text-white rounded-lg hover:bg-teal-700 uppercase"
+              className="block w-full py-2 my-2  rounded-lg hover:bg-gradient-to-b from-teal-400 to-teal-700 uppercase"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              
+            style={{ fontFamily: "Righteous, sans-serif" }}
             >
               {item.label}
             </motion.button>

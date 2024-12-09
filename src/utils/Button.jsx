@@ -14,7 +14,7 @@ const AnimatedHamburgerButton = () => {
   return (
     <MotionConfig
       transition={{
-        duration: 0.5,
+        duration: 0,
         ease: "easeInOut",
       }}
     >
@@ -36,12 +36,12 @@ const AnimatedHamburgerButton = () => {
         />
         <motion.span
           variants={VARIANTS.bottom}
-          className="absolute h-1 w-5 bg-white"
+          className="absolute h-1 w-5 bg-black"
           style={{
-            x: "-50%",
+            x: "50%",
             y: "50%",
             bottom: "35%",
-            left: "calc(50% + 10px)",
+            // left: "calc(50% + 10px)",
           }}
         />
       </motion.button>
